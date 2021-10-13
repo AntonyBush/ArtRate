@@ -2,8 +2,16 @@ body{
     font-size: larger;
 }
 
-.d-flex{
-    margin-left:auto;
+.d-flex {
+    position: absolute;
+    right: 25%;
     width: 50%;
-    right: auto;
+}
+
+.navbar{
+    background: linear-gradient(132deg, rgb(251, 165, 116) 0.00%, rgb(216, 245, 251) 100.00%);
+}
+
+.navbar-nav{
+    margin-left: auto;
 }
