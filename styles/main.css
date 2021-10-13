@@ -1,0 +1,9 @@
+body{
+    font-size: larger;
+}
+
+.d-flex{
+    margin-left:auto;
+    width: 50%;
+    right: auto;
+}
