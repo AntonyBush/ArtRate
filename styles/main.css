@@ -1,4 +1,4 @@
-body{
+/* body{
     font-size: larger;
 }
 
@@ -6,12 +6,9 @@ body{
     position: absolute;
     right: 25%;
     width: 50%;
-}
+} */
 
 .navbar{
     background: linear-gradient(132deg, rgb(251, 165, 116) 0.00%, rgb(216, 245, 251) 100.00%);
 }
 
-.navbar-nav{
-    margin-left: auto;
-}
