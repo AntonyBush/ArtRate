@@ -13,7 +13,7 @@
     <?php include 'nav.php'; 
     ?>
     <img src="upload-background.jpg" alt="image" style="width:100%; height:100%; position: absolute; z-index: -1;">
-    <div class="card m-auto w-50 shadow-lg p-3 mt-5 bg-white rounded" style="top:100px">
+    <div class="card m-auto w-50 shadow-lg p-3 mt-5 bg-white rounded" style="top:60px">
         <div class="card-body">
             <form action="upload.php" method="post" enctype="multipart/form-data">
                 <div class="form-group">
@@ -45,7 +45,7 @@
     </div>
     <?php 
         // Include the database configuration file  
-        require_once 'config.php'; 
+        include 'config.php'; 
         
         // If file upload form is submitted 
         $status = $statusMsg = ''; 
@@ -87,6 +87,6 @@
         
         // Display status message 
         echo $statusMsg; 
-        ?>
+    ?>
 </body>
 </html>

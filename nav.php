@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light">
     <a class="navbar-brand" href="index.php">
-        <img src="/docs/4.6/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+        <img src="artrate.png" width="30" height="30" class="d-inline-block align-top" alt="">
         Art Rate
     </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
