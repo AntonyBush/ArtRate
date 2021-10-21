@@ -59,12 +59,13 @@
     <?php 
     include 'nav.php';
     // Include the database configuration file  
-    
+
     // Get image data from database 
     $result = $conn->query("SELECT * FROM art"); 
-    $userid = 1;
+    $userid = get_current_user().getRealIpAddr();
     ?>    
     <?php if($result->num_rows > 0){ ?>  
+        <h1><?php echo $userid?></h1>
         <div class="container-fluid">
         <div class="row">
             <?php while($row = mysqli_fetch_array($result)){ ?>   
@@ -72,8 +73,8 @@
                     $postid = $row['id'];
 
                     //userrating
-                    $query = "SELECT * FROM art_rating WHERE artid=".$postid." and userid=".$userid;
-                    $userresult = mysqli_query($conn,$query) or die(mysqli_error());
+                    $query = "SELECT * FROM art_rating WHERE artid=".$postid." and userid LIKE '$userid'";
+                    $userresult = mysqli_query($conn,$query) or die(mysqli_error($conn));
                     $fetchRating = mysqli_fetch_array($userresult);
                     $rating = isset($fetchRating['rating']);
 
