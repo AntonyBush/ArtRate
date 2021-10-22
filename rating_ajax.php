@@ -27,6 +27,9 @@ $result = mysqli_query($conn,$query) or die(mysqli_error());
 $fetchAverage = mysqli_fetch_array($result);
 $averageRating = $fetchAverage['averageRating'];
 
+$updaterate = "UPDATE art SET rating=".$averageRating." WHERE id = ".$postid;
+mysqli_query($conn,$updaterate);
+
 $return_arr = array("averageRating"=>$averageRating);
 
 echo json_encode($return_arr);

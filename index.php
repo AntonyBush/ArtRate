@@ -1,5 +1,5 @@
 <?php include 'config.php';
-
+    include 'nav.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,12 +56,41 @@
 
 </head>
 <body>
+    <form action="index.php" method="get">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <button class="btn btn-outline-secondary" type="submit" name='filt'>Button</button>
+            </div>
+            <select class="custom-select" id="inputGroupSelect03" name='filter'>
+                <option selected>Sort by...</option>
+                <option value="1">Most Rated </option>
+                <option value="2">Least Rated</option>
+                <option value="3">New</option>
+            </select>
+        </div>
+    </form>
     <?php 
-    include 'nav.php';
     // Include the database configuration file  
 
     // Get image data from database 
-    $result = $conn->query("SELECT * FROM art"); 
+    if (isset($_GET['filt'])){
+        $f = $_GET['filter'];
+        if($f==1){
+            $result = $conn->query("SELECT * FROM art ORDER BY rating DESC");  
+        }
+        else if($f==2){
+            $result = $conn->query("SELECT * FROM art ORDER BY rating"); 
+        }
+        else if($f==3){
+            $result = $conn->query("SELECT * FROM art ORDER BY uploaded_time DESC"); 
+        }
+        else{
+            $result = $conn->query("SELECT * FROM art"); 
+        }
+    }
+    else{
+        $result = $conn->query("SELECT * FROM art"); 
+    }
     $userid = get_current_user().getRealIpAddr();
     ?>    
     <?php if($result->num_rows > 0){ ?>  
@@ -83,7 +112,6 @@
                     $avgresult = mysqli_query($conn,$query);
                     $fetchAverage = mysqli_fetch_array($avgresult);
                     $averageRating = $fetchAverage['averageRating'];
-
                     if($averageRating <= 0){
                         $averageRating = "No rating yet.";
                     }
