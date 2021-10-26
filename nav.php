@@ -30,7 +30,7 @@ function showResult(str) {
     <form class="form-inline" action="index.php" method='get' style="margin-left:auto; width:70%;">
       <input class="form-control mr-sm-2" style="width:65%" type="text" placeholder="Search" onkeyup="showResult(this.value)" name="categ" aria-label="Search">
       <div id="livesearch"></div>
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <button class="btn btn-outline-success my-2 my-sm-0" name='categg' type="submit">Search</button>
     </form>
     <ul class="navbar-nav mr-0">
       <li class="nav-item active">

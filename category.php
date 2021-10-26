@@ -2,7 +2,7 @@
 
 include 'config.php';
 
-$r = $conn->query("SELECT category FROM art");
+$r = $conn->query("SELECT DISTINCT(category) FROM art");
 $a=[];
 while ($row = mysqli_fetch_row($r)) {
     $a[] = $row[0]; 
